@@ -1,0 +1,9 @@
+/*
+ * The packaged dashboard keeps its own design. The site brands it with one
+ * thing — its accent, per appearance (INTEGRATION.md §10). Skin in Focus's action
+ * colour is persimmon carrying white text, so Light uses it as is; on the dark
+ * dashboard Dark uses the pale apricot with espresso text. Owner monogram, primary
+ * buttons, Confirm, focus rings, selection and the schedule's "now" line follow it.
+ */
+:root .pbe-admin[data-mode='light'] { --pbe-accent: #b04a2e; --pbe-accent-text: #ffffff; } /* white on persimmon ≈5.4:1 */
+:root .pbe-admin[data-mode='dark']  { --pbe-accent: #e9a07f; --pbe-accent-text: #1c1714; } /* apricot on a near-black dashboard; espresso text ≈9:1 */

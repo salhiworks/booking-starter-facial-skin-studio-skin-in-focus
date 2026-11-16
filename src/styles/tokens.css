@@ -1,0 +1,247 @@
+/*
+ * Morrow Skin Studio — design tokens (Skin in Focus).
+ * The ONLY file with raw colours, fonts, sizes and spacing.
+ *
+ * The idea: a contemporary skincare campaign. Warm bone pages, sand panels and the
+ * deep espresso of a darkened treatment room; one persimmon accent — the colour of
+ * warm skin in late light — for the actions and a few chosen words. Photography is
+ * the protagonist: large, warm, close, cropped with intent. Type is one modern grotesk
+ * (Host Grotesk) used at campaign scale — tight, confident display sizes set against
+ * a light weight for emphasis, small spaced labels for structure. No serif headlines,
+ * no gradients for decoration, no ornaments: the photographs and the scale do the work.
+ *
+ * Token names are shared with the other Niche Pack starters (so booking.css reads
+ * the same everywhere); the comments say what each one is here.
+ */
+:root {
+  /* ── Colour ─────────────────────────────────────────────── */
+  --paper: #f4efe9;          /* bone — the page */
+  --raised: #fbf8f4;         /* white — inputs, the booking sheet, choices */
+  --oat: #e9e1d7;            /* sand — quiet panels, the booking summary */
+  --oat-deep: #dccfc1;       /* frames while loading, skeletons */
+  --sage-100: #f0e9e1;       /* quiet highlights */
+  --sage-200: #ead9cc;       /* tags, done steps, selection */
+  --rule: #ddd2c6;           /* hairlines (decorative) */
+  --line-input: #75675d;     /* input and icon-button borders (≥ 3:1 on bone, sand and white) */
+  --line-soft: #b9aa9c;      /* borders of choice buttons named by their own text */
+  --mark: #3d7a52;           /* the "open" dot (≥ 3:1) */
+  --ink: #1c1714;            /* espresso — 15.5:1 on bone */
+  --ink-soft: #3d342e;       /* reading text — 10.6:1 */
+  --muted: #6b5f56;          /* secondary text — 5.4:1 on bone, 4.8:1 on sand */
+  --clay: #a3261b;           /* errors only (with an icon or words, never colour alone) */
+  --ply: #cdbfb2;            /* decorative only */
+  --honey-wash: #f0e9e1;
+  --scrim: rgb(28 23 20 / 0.08);
+  --veil: rgb(24 18 15 / 0.62); /* the page behind the booking sheet */
+  --clay-wash: color-mix(in oklab, var(--clay) 6%, var(--raised));
+  --mark-halo: color-mix(in oklab, var(--mark) 22%, transparent);
+
+  /* Espresso: the booking band, the booking sheet's header, the footer (never owner-editable). */
+  --forest: #1f1915;         /* espresso band */
+  --forest-2: #2a221d;       /* a raised panel */
+  --forest-3: #352b25;       /* a lifted panel, hover */
+  --on-forest: #f4efe9;      /* 15:1 on espresso */
+  --on-forest-soft: #d8cbbf; /* ≈11:1 */
+  --on-forest-faint: #a99a8c; /* 6.4:1 — small print on espresso only */
+  --forest-line: #3a302a;
+  --forest-line-strong: #5a4c43;
+  --light: #ffffff;
+
+  /* Owner-editable (brand.accent) — set on <html> at run time.
+     A DEEP colour that carries white text (the editor checks any new colour at 4.5:1
+     against white): buttons, the light-weight highlight, selected choices, state edges. */
+  --accent: #b04a2e;         /* persimmon */
+  --accent-strong: color-mix(in oklab, var(--accent) 86%, #000);
+  --accent-deep: color-mix(in oklab, var(--accent) 66%, #000);
+  --accent-tint: color-mix(in oklab, var(--accent) 14%, var(--raised));
+  --accent-wash: color-mix(in oklab, var(--accent) 6%, var(--raised));
+  --on-accent: #ffffff;      /* white on persimmon, 5.4:1 */
+  --on-accent-soft: #f6e4dc;
+  --accent-text: var(--accent);   /* 4.75:1 on bone */
+  --accent-edge: var(--accent);
+  --accent-line: var(--accent-deep);
+  --focus: var(--ink);
+  /* The accent on espresso: apricot, so highlights and focus read (8:1). */
+  --accent-glow: #e9a07f;
+
+  /* Kept for the shared booking styles (the scaffold's ornament tokens). */
+  --sight-color: var(--ink);
+  --sight-w: 2.75rem;
+  --sight-tick: 0.5625rem;
+  --sight-rule: 1px;
+  --staff-height: 3px;
+  --staff: linear-gradient(90deg, var(--accent-glow) 0 100%);
+  --staff-on-dark: var(--staff);
+  --ticks-on-dark: var(--staff);
+  --tick-tall: var(--staff-height);
+  --marker-bar: 0.375rem;
+
+  /* ── Type ───────────────────────────────────────────────── */
+  --font-display: 'Host Grotesk Variable', 'Helvetica Neue', Arial, sans-serif;
+  --font-text: 'Host Grotesk Variable', 'Helvetica Neue', Arial, sans-serif;
+  --font-sans-display: var(--font-display);
+  --font-mono: var(--font-text);
+
+  --text-micro: 0.75rem;
+  --text-xs: 0.8125rem;
+  --text-sm: 0.9375rem;
+  --text-md: clamp(1rem, 0.97rem + 0.12vw, 1.0625rem);
+  --text-lg: clamp(1.125rem, 1.05rem + 0.35vw, 1.375rem);
+  --text-xl: clamp(1.5rem, 1.3rem + 0.8vw, 2rem);
+  --text-2xl: clamp(2rem, 1.4rem + 2vw, 3.25rem);
+  --text-3xl: clamp(2.5rem, 1.35rem + 3.6vw, 5rem);       /* section titles */
+  --text-hero: clamp(3.25rem, 1.2rem + 8.2vw, 9.5rem);   /* the first screen */
+  --text-mega: clamp(4rem, 0.5rem + 15vw, 17rem);        /* the footer wordmark */
+  --text-statement: clamp(1.75rem, 1.2rem + 2.2vw, 3.25rem);
+  --text-numeral: clamp(2.25rem, 1.8rem + 1.8vw, 3.25rem);
+  --text-code: clamp(1.875rem, 1.6rem + 1.2vw, 2.375rem);
+  --text-step: clamp(1.75rem, 1.5rem + 0.8vw, 2.25rem);
+  --text-sheet: clamp(1.375rem, 1.25rem + 0.4vw, 1.625rem);
+  --text-service: clamp(1.5rem, 1.35rem + 0.6vw, 1.875rem);
+  --text-price: clamp(1.5rem, 1.32rem + 0.6vw, 1.875rem);
+  --text-fact: clamp(1.25rem, 1.15rem + 0.4vw, 1.5rem);
+  --text-wordmark: 1.625rem;
+  --text-footer-name: var(--text-mega);
+  --text-card: clamp(1.25rem, 1.12rem + 0.5vw, 1.625rem);
+  --text-step-n: clamp(2rem, 1.7rem + 1vw, 2.75rem);
+  --text-feature: clamp(1.75rem, 1.3rem + 1.4vw, 2.625rem); /* a featured facial's name */
+
+  --leading-display: 0.9;
+  --leading-heading: 0.98;
+  --leading-body: 1.6;
+  --leading-tight: 1.2;
+
+  --tracking-display: -0.045em;
+  --tracking-eyebrow: 0.14em;
+  --tracking-button: 0;
+  --tracking-code: 0.42em;
+  --tracking-tag: 0.1em;
+  --tracking-wordmark: -0.04em;
+  --tracking-mono: 0.02em;
+  --tracking-label: 0.12em;
+
+  --weight-text: 400;
+  --weight-strong: 600;
+  --weight-medium: 500;
+  --weight-display: 560;
+  --weight-light: 300;
+  --weight-sans-display: 560;
+
+  --stretch-display: 100%;
+  --stretch-label: 100%;
+  --stretch-text: 100%;
+
+  --heading-font: var(--font-display);
+  --heading-weight: var(--weight-display);
+  --heading-stretch: var(--stretch-display);
+  --heading-tracking: -0.035em;
+  --heading-light-weight: var(--weight-light);
+
+  --measure: 60ch;
+  --measure-lede: 36ch;
+  --measure-title: 14ch;
+
+  /* ── Space ──────────────────────────────────────────────── */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 3rem;
+  --space-8: 4rem;
+  --space-9: 6rem;
+  --space-10: 8.5rem;
+
+  --gutter: clamp(1.25rem, 4vw, 4rem);
+  /* Vertical rhythm: three section paddings and one heading gap.
+     feature — the image-led moments (skin in detail, booking band);
+     default — facials, studio, your visit;
+     compact — the calmer informational sections (approach, questions, visit). */
+  --section-pad: clamp(4rem, 2rem + 4.6vw, 7.5rem);
+  --section-pad-feature: clamp(3.5rem, 1.75rem + 4vw, 6.5rem);
+  --section-pad-compact: clamp(3.5rem, 1.75rem + 3.4vw, 5.5rem);
+  --head-gap: clamp(2.25rem, 1.25rem + 2.6vw, 4rem);   /* a section's heading block to its content */
+  --desk-pad: clamp(var(--space-5), 4vw, var(--space-8));
+  --page-max: 88rem;
+  --header-height: 4.5rem;
+  --header-bar: 4.5rem;
+  --sheet-width: 60rem;
+
+  /* ── Sizes ──────────────────────────────────────────────── */
+  --tap: 2.75rem;
+  --control: 3.25rem;
+  --input: 3rem;
+  --chip: 2.75rem;
+  --day-cell: 2.75rem;
+  --day-card-w: 4rem;
+  --day-card-h: 5.25rem;
+  --dot: 0.3125rem;
+  --drop: 0.75rem;
+  --edge: 3px;
+  --hairline: 1px;
+  --rule-strong: 2px;
+  --focus-width: 2px;
+  --focus-offset: 3px;
+  --logo-height: 1.875rem;
+  --logo-max: 11rem;
+  --summary-width: 17rem;
+  --time-min: 6rem;
+  --label-col: 7rem;
+  --form-max: 34rem;
+  --code-width: 15rem;
+  --code-height: 4rem;
+  --sticky-offset: 6rem;
+  --status-dot: 0.5rem;
+  --skeleton-block: 20rem;
+  --skeleton-times: 9rem;
+  --text-label: 0.75rem;
+
+  /* ── Shape ──────────────────────────────────────────────── */
+  /* Photographs square-cornered and large; actions as soft pills. */
+  --radius-0: 0;
+  --radius-1: 2px;
+  --radius-2: 4px;
+  --radius-photo: 0;
+  --radius-button: 999px;
+  --radius-nail: 50%;
+  --radius-pill: 999px;
+  --shadow-soft: 0 -0.5rem 1.5rem var(--scrim);
+  --shadow-top: 0 0.5rem 1.5rem var(--scrim);
+  --shadow-print: 0 1.25rem 2.5rem -1.25rem rgb(28 23 20 / 0.28);
+  --shadow-sheet: -1.5rem 0 4rem rgb(28 23 20 / 0.26);
+
+  /* ── Motion ─────────────────────────────────────────────── */
+  --dur-quick: 180ms;
+  --dur-step: 280ms;
+  --dur-enter: 900ms;        /* an image revealing as it enters the screen */
+  --dur-photo: 1200ms;       /* a photograph's slow settle */
+  --dur-sheet: 420ms;
+  --stagger: 90ms;
+  --dur-shimmer: 1600ms;
+  --dur-spin: 900ms;
+  --ease-settle: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-soft: cubic-bezier(0.65, 0, 0.35, 1);
+  --rise: 1.25rem;
+  --settle-scale: 1.025;
+  --hover-scale: 1.02;
+
+  /* ── Layers ─────────────────────────────────────────────── */
+  --layer-sticky: 5;
+  --layer-banner: 10;
+  --layer-header: 8;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --dur-quick: 1ms;
+    --dur-step: 1ms;
+    --dur-enter: 1ms;
+    --dur-photo: 1ms;
+    --dur-sheet: 1ms;
+    --stagger: 0ms;
+    --rise: 0px;
+    --settle-scale: 1;
+    --hover-scale: 1;
+  }
+}
