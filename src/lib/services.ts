@@ -5,7 +5,7 @@ import type { Service } from '@profitstudio/booking-engine';
  * The studio’s facials: its groups (Facials · Massage · Consultation), the photograph each
  * treatment shows in the facials section, who a treatment is usually good for, and honest length and price terms.
  *
- * The engine (2.0.0-beta.4) has no service categories and no per-service metadata, and a service's id
+ * The engine (2.0.0) has no service categories and no per-service metadata, and a service's id
  * is a database UUID this site cannot know when it is built — so everything is read from the
  * service's own engine data:
  *
