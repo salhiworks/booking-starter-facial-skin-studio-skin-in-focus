@@ -4,7 +4,7 @@ A one-page booking website for an independent esthetician, shipped as **Morrow S
 fictional one-room, one-esthetician skin studio in Rockridge, Oakland: a signature facial, a hydration
 facial, a calm & reset facial, an express facial, a facial massage and a skincare consultation) for
 the owner to make their own. Its identity lives in `src/site.config.ts`; `CUSTOMIZE.md` is the prompt
-that personalizes it. Built around **@profitstudio/booking-engine** **2.0.0** (pinned; lock in
+that personalizes it. Built around **@profitstudio/booking-engine** **2.0.1** (pinned; lock in
 `booking-engine.lock.json`). The engine owns booking; this project owns the public design.
 
 Read before changing anything:

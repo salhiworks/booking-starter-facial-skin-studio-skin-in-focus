@@ -23,7 +23,7 @@ one persimmon accent; Host Grotesk at campaign scale; large, warm, closely cropp
 one curated set; photographs that settle gently into place as you scroll.
 
 Booking runs on [`@profitstudio/booking-engine`](https://www.npmjs.com/package/@profitstudio/booking-engine)
-**2.0.0** (pinned) with your own Supabase project and Resend for email.
+**2.0.1** (pinned) with your own Supabase project and Resend for email.
 
 ## 1. Try it (no accounts needed)
 
